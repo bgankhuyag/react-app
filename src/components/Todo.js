@@ -10,7 +10,7 @@ function Todo({todo, toggleComplete, removeTodo}) {
   }
 
   const liStyles = {
-    color: "white",
+    color: "black",
     textDecoration: todo.completed ? "line-through" : null,
     listStyleType: "none",
     width: 300,
@@ -21,9 +21,9 @@ function Todo({todo, toggleComplete, removeTodo}) {
 
   return (
     <div style={{display: 'flex'}}>
-      <input type="checkbox" onClick={handleCheckboxClick} />
+      <input type="checkbox" onClick={handleCheckboxClick} defaultChecked={todo.completed ? "checked" : null} />
       <li style={liStyles}> {todo.task} </li>
-      <button style={{height: 30, marginTop: 10}} onClick={handleRemoveClick} >X</button>
+      <button onClick={handleRemoveClick} className="remove">X</button>
     </div>
   );
 }
